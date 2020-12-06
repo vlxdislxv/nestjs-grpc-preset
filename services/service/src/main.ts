@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { join } from 'path';
+import { SERVICE_PACKAGE, SERVICE_URL, SERVICE_PROTO } from '@app-core/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -9,9 +9,9 @@ async function bootstrap() {
     {
       transport: Transport.GRPC,
       options: {
-        package: 'service',
-        url: 'localhost:3001',
-        protoPath: join(__dirname, '..', 'proto/service.proto'),
+        package: SERVICE_PACKAGE,
+        url: SERVICE_URL,
+        protoPath: SERVICE_PROTO,
       },
     },
   );

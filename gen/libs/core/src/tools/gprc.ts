@@ -1,5 +1,5 @@
 import { ClientProxyFactory, Transport } from '@nestjs/microservices';
-import { join } from 'path';
+import { SERVICE_PROTO } from '../providers';
 
 export const makeClient = (url: string, _package: string, proto: string) => {
   return ClientProxyFactory.create({
@@ -7,7 +7,7 @@ export const makeClient = (url: string, _package: string, proto: string) => {
     options: {
       url,
       package: _package,
-      protoPath: join(__dirname, '..', proto),
+      protoPath: SERVICE_PROTO,
     },
   });
 };
