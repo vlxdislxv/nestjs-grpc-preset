@@ -1,0 +1,8 @@
+node_modules
+.DS_STORE
+
+api/proto
+services/**/proto
+
+api/libs
+services/**/libs

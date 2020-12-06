@@ -1,0 +1,15 @@
+{
+  "name": "gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ts-proto": "^1.39.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile": "bash compile.sh && node copy.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
