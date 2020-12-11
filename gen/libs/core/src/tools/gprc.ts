@@ -7,7 +7,7 @@ export const makeClient = (url: string, _package: string, proto: string) => {
     options: {
       url,
       package: _package,
-      protoPath: SERVICE_PROTO,
+      protoPath: proto,
     },
   });
 };
