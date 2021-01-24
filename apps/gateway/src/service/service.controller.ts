@@ -1,12 +1,13 @@
 import { Controller, Get, Inject } from '@nestjs/common';
-import { Hi, Service } from '../../../../proto/service';
+import { Observable } from 'rxjs';
+import { Hi, ServiceClient } from '../../../../proto/service';
 
 @Controller('service')
 export class ServiceController {
-  constructor(@Inject('SERVICE') private readonly service: Service) {}
+  constructor(@Inject('SERVICE') private readonly service: ServiceClient) {}
 
   @Get()
-  public get(): Promise<Hi> {
+  public get(): Hi | Observable<Hi> {
     return this.service.get({});
   }
 }
