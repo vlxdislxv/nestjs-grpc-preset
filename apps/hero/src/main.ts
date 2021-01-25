@@ -1,20 +1,23 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { SERVICE_PACKAGE, SERVICE_URL, SERVICE_PROTO } from '@app-core/core';
-import { ServiceModule } from './service.module';
+import { HERO_URL, HERO_PROTO } from '@app-core/providers';
+import { HERO_PACKAGE_NAME } from 'proto/hero';
+import { HeroModule } from './hero.module';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    ServiceModule,
+    HeroModule,
     {
       transport: Transport.GRPC,
       options: {
-        package: SERVICE_PACKAGE,
-        url: SERVICE_URL,
-        protoPath: SERVICE_PROTO,
+        package: HERO_PACKAGE_NAME,
+        url: HERO_URL,
+        protoPath: HERO_PROTO,
       },
     },
   );
+
   app.listenAsync();
 }
+
 bootstrap();

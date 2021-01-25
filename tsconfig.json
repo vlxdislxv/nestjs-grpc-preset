@@ -12,11 +12,11 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@app-core/core": [
-        "libs/core/src"
+      "@app-core/providers": [
+        "libs/providers/src"
       ],
-      "@app-core/core/*": [
-        "libs/core/src/*"
+      "@app-core/providers/*": [
+        "libs/providers/src/*"
       ]
     }
   }

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ServiceModule } from './service/service.module';
+import { HeroModule } from './hero/hero.module';
 
 @Module({
-  imports: [ServiceModule],
+  imports: [HeroModule],
 })
 export class GatewayModule {}

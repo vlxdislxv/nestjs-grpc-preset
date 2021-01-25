@@ -11,22 +11,22 @@
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
     },
-    "service": {
+    "hero": {
       "type": "application",
-      "root": "apps/service",
+      "root": "apps/hero",
       "entryFile": "main",
-      "sourceRoot": "apps/service/src",
+      "sourceRoot": "apps/hero/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/service/tsconfig.app.json"
+        "tsConfigPath": "apps/hero/tsconfig.app.json"
       }
     },
-    "core": {
+    "providers": {
       "type": "library",
-      "root": "libs/core",
+      "root": "libs/providers",
       "entryFile": "index",
-      "sourceRoot": "libs/core/src",
+      "sourceRoot": "libs/providers/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/core/tsconfig.lib.json"
+        "tsConfigPath": "libs/providers/tsconfig.lib.json"
       }
     }
   },

@@ -9,7 +9,7 @@
     "prebuild": "rimraf dist",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start:gateway": "nest start gateway",
-    "start:service": "nest start service",
+    "start:hero": "nest start hero",
     "compile:proto": "bash proto/scripts/compile.sh",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
@@ -74,7 +74,9 @@
     ],
     "moduleNameMapper": {
       "@app-core/core/(.*)": "<rootDir>/libs/core/src/$1",
-      "@app-core/core": "<rootDir>/libs/core/src"
+      "@app-core/core": "<rootDir>/libs/core/src",
+      "@app-core/providers/(.*)": "<rootDir>/libs/providers/src/$1",
+      "@app-core/providers": "<rootDir>/libs/providers/src"
     }
   }
 }

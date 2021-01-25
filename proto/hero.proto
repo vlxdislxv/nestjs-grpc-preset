@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package service;
+package hero;
 
-service Service {
-  rpc get (Empty) returns (Hi) {}
+service HeroService {
+  rpc Get (Empty) returns (Hi) {}
 }
 
 message Empty {}

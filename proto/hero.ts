@@ -2,7 +2,7 @@
 import { GrpcMethod, GrpcStreamMethod } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
-export const protobufPackage = 'service';
+export const protobufPackage = 'hero';
 
 export interface Empty {}
 
@@ -10,17 +10,17 @@ export interface Hi {
   msg: string;
 }
 
-export const SERVICE_PACKAGE_NAME = 'service';
+export const HERO_PACKAGE_NAME = 'hero';
 
-export interface ServiceClient {
+export interface HeroServiceClient {
   get(request: Empty): Observable<Hi>;
 }
 
-export interface ServiceController {
+export interface HeroServiceController {
   get(request: Empty): Promise<Hi> | Observable<Hi> | Hi;
 }
 
-export function ServiceControllerMethods() {
+export function HeroServiceControllerMethods() {
   return function (constructor: Function) {
     const grpcMethods = ['get'];
     for (const method of grpcMethods) {
@@ -28,7 +28,7 @@ export function ServiceControllerMethods() {
         constructor.prototype,
         method,
       );
-      GrpcMethod('Service', method)(
+      GrpcMethod('HeroService', method)(
         constructor.prototype[method],
         method,
         descriptor,
@@ -40,7 +40,7 @@ export function ServiceControllerMethods() {
         constructor.prototype,
         method,
       );
-      GrpcStreamMethod('Service', method)(
+      GrpcStreamMethod('HeroService', method)(
         constructor.prototype[method],
         method,
         descriptor,
@@ -49,4 +49,4 @@ export function ServiceControllerMethods() {
   };
 }
 
-export const SERVICE_NAME = 'Service';
+export const HERO_SERVICE_NAME = 'HeroService';

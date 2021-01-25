@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class ServiceService {
+export class HeroService {
   get(): any {
     return { msg: 'darova' };
   }
