@@ -1,7 +1,7 @@
 import { FactoryProvider } from '@nestjs/common';
 import { join } from 'path';
 import { HERO_PACKAGE_NAME, HERO_SERVICE_NAME } from 'proto/hero';
-import { makeClient, promisifyService } from '../tools/gprc';
+import { ProxyService } from '../proxy/proxy.service';
 
 export const HERO_PROTO = join(
   __dirname,
@@ -16,10 +16,14 @@ export const HERO_URL = 'localhost:3001';
 
 export const HeroProvider: FactoryProvider = {
   provide: 'HERO',
-  useFactory() {
-    const client = makeClient(HERO_URL, HERO_PACKAGE_NAME, HERO_PROTO);
-
-    return promisifyService(client.getService(HERO_SERVICE_NAME));
+  useFactory(proxyService: ProxyService) {
+    return proxyService
+      .getOrMakeClient('HeroClient', {
+        url: HERO_URL,
+        package: HERO_PACKAGE_NAME,
+        protoPath: HERO_PROTO,
+      })
+      .getService(HERO_SERVICE_NAME);
   },
-  inject: [],
+  inject: [ProxyService],
 };
