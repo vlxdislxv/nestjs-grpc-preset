@@ -15,8 +15,8 @@ describe('ServiceController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(serviceController.get()).toBe('Hello World!');
+    it('should return msg "Hello World!"', () => {
+      expect(serviceController.get()).toEqual({ msg: 'Hello World!' });
     });
   });
 });

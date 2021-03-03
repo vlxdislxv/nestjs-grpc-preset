@@ -1,10 +1,11 @@
 import { FactoryProvider } from '@nestjs/common';
 import { join } from 'path';
-import { HERO_PACKAGE_NAME, HERO_SERVICE_NAME } from 'proto/hero';
+import { HERO_PACKAGE_NAME, HERO_SERVICE_NAME } from '../../../../proto/hero';
 import { ProxyService } from '../proxy/proxy.service';
 
 export const HERO_PROTO = join(
   __dirname,
+  '..',
   '..',
   '..',
   '..',

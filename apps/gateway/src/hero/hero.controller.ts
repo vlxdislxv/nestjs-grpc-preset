@@ -1,6 +1,5 @@
 import { Controller, Get, Inject } from '@nestjs/common';
-import { Observable } from 'rxjs';
-import { Hi, HeroServiceClient } from '../../../../proto/hero';
+import { HeroServiceClient } from '../../../../proto/hero';
 
 @Controller('hero')
 export class HeroController {
@@ -10,7 +9,7 @@ export class HeroController {
   ) {}
 
   @Get()
-  public get(): Hi | Observable<Hi> {
+  public get() {
     return this.heroService.get({});
   }
 }
