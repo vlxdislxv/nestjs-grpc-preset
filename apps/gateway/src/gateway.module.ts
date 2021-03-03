@@ -1,5 +1,4 @@
-import { HeroProvider } from '@app-core/providers';
-import { ProxyModule } from '@app-core/providers/proxy/proxy.module';
+import { HeroProvider, ProxyModule } from '@app-core/providers';
 import { Module } from '@nestjs/common';
 import { HeroModule } from './hero/hero.module';
 

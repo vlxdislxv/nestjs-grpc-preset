@@ -3,7 +3,6 @@ import { HeroController } from './hero.controller';
 import { HeroService } from './hero.service';
 
 @Module({
-  imports: [],
   controllers: [HeroController],
   providers: [HeroService],
 })
