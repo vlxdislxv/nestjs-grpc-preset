@@ -20,7 +20,7 @@ describe('GatewayController (e2e)', () => {
 
   let app: NestFastifyApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [HeroModule, ProxyModule.register([HeroProvider])],
     })
@@ -49,7 +49,7 @@ describe('GatewayController (e2e)', () => {
       );
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await app.close();
   });
 });

@@ -12,7 +12,7 @@ describe('HeroController (e2e)', () => {
   let app: INestMicroservice;
   let client: any;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [HeroModule],
     }).compile();
